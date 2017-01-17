@@ -8,10 +8,13 @@ git push -u origin master
 # API：
 >+ [react](https://tianxiangbing.github.io/react-cn/)
 >+ [react-native](http://reactnative.cn/docs/0.40/activityindicator.html#content)
+
 ```
 # 下载
  webStorm,nodejs,android-sdk,git
 ```
+
+
 ### 安装环境
 
 * 安装chocolatey安装工具
@@ -27,7 +30,7 @@ set-executionpolicy  Restricted
 * 使用chocolatey安装python2, ~~Node~~ , ~~Git~~ 
   > `choco install python2`
   
-  > ~~`choco install nodejs.install`~~ 
+  >  ~~`choco install nodejs.install`~~ 
 
   ```
       #切换淘宝npm源
@@ -73,6 +76,7 @@ react-native start
 
 ```
 ### 测试环境
+Google浏览器安装 [react-developer-tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon)
 
 安卓5.0以上机器链接
 ```
