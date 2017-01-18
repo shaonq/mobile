@@ -4,16 +4,20 @@
 git remote add origin https://github.com/shaonq/mobile.git
 git push -u origin master
 ```
+
 ### 开始前的准备工作
-# API：
+#### API：
 >+ [react](https://tianxiangbing.github.io/react-cn/)
 >+ [react-native](http://reactnative.cn/docs/0.40/activityindicator.html#content)
 
-```
-# 下载
- webStorm,nodejs,android-sdk,git
-```
+#### 下载 Java SDK
 
+>- [下载]()        
+>- 添加系统变量 `JAVA_HOME` Java sdk路径        
+>- 添加系统变量 `path`  `%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin`
+
+#### 下载一些工具
+> `webStorm`,`nodejs`,`android-sdk`,`git`
 
 ### 安装环境
 
@@ -56,6 +60,11 @@ set-executionpolicy  Restricted
 `(if not exist "%USERPROFILE%/.gradle" mkdir "%USERPROFILE%/.gradle") && (echo org.gradle.daemon=true >> "%USERPROFILE%/.gradle/gradle.properties")`~~
 
 ### 测试安装
+依赖包
+ >+ Tools: `Android SDK Tools`,`Android SDK Platform-tools`,`Android SDK Build-tools`
+ >+ Android 6.0(API23): `SDK Platform`,`Intel x86 Atom System Image`
+ >+ Extras: `Android Support repository`, ~~`Android Support library`~~ 
+
 ```
 # Windows用户请注意，请不要在命令行默认的System32目录中init项目！会有各种权限限制导致不能运行！
 #打开一个空的webStorm项目，在Terminal 执行
