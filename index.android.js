@@ -1,10 +1,10 @@
-// 引用react的 Component|组件
+
 import React, { Component } from 'react';
 // 引用react-native的 AppRegistry|内置模块 Navigator|导航  ToastAndroid|气泡
 import { AppRegistry, Navigator, ToastAndroid } from 'react-native';
-// 引用 自定义的GankShowComponent
-import GankShowComponent from './js/GankShowComponent'
 
+
+import GankShowComponent from './js/GankShowComponent'
 class AwesomeProject extends Component {
     render() {
         let defaultName = 'GankShowComponent';
@@ -25,3 +25,4 @@ class AwesomeProject extends Component {
     }
 }
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+

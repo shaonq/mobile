@@ -88,13 +88,15 @@ adb reverse tcp:8081 tcp:8081
 # react-native start
 
 ```
+[查看项目](http://localhost:8081/debugger-ui)
+
 现在你已经成功运行了项目，我们可以开始尝试动手改一改了：
 
 
 > - 在index.android.js并随便改上几行
 > - 按两下R键，或是用Menu键（通常是F2，在Genymotion模拟器中是?+M）打开开发者菜单，然后选择 Reload JS 就可以看到你的最新修改。
 > - 在终端下运行adb logcat *:S ReactNative:V 
-> -  ReactNativeJS:V可以看到你的应用的日志。
+> - ReactNativeJS:V可以看到你的应用的日志。
 > - ~~`adb 位于系统 ANDROID_HOME 变量`~~
 
 ### 打包APK文件
