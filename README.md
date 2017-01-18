@@ -1,4 +1,4 @@
-## 环境搭建 [React](REACT.md) [ReactNative](REACT.md)
+## 环境搭建 [React](https://github.com/shaonq/mobile/blob/master/React.md) [ReactNative](https://github.com/shaonq/mobile/blob/master/md/ReactNative.md)
 ```
 # git 
 git remote add origin https://github.com/shaonq/mobile.git
