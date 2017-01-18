@@ -90,6 +90,7 @@ Google浏览器安装 [react-developer-tool](https://chrome.google.com/webstore/
 安卓5.0以上机器链接
 ```
 adb reverse tcp:8081 tcp:8081
+# react-native start
 
 ```
 现在你已经成功运行了项目，我们可以开始尝试动手改一改了：
@@ -100,5 +101,12 @@ adb reverse tcp:8081 tcp:8081
 > - 在终端下运行adb logcat *:S ReactNative:V 
 > -  ReactNativeJS:V可以看到你的应用的日志。
 > - ~~`adb 位于系统 ANDROID_HOME 变量`~~
+
+### 打包APK文件
+
+>- `cd android`
+>- `gradlew assembleRelease`
+>- `download` `=>` `android\app\build\outputs\apk`
+
 
   

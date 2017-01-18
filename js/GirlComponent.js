@@ -33,7 +33,7 @@ class GirlComponent extends Component {
     }
 
     getImage() {
-        yield fetch('http://gank.io/api/data/福利/100/1')//异步请求图片
+       /* yield fetch('http://gank.io/api/data/福利/100/1')//异步请求图片
             .then((response) => {
                 return response.json();
             })
@@ -43,7 +43,7 @@ class GirlComponent extends Component {
                     this.setState({imgUrl: responseJson.results[index].url});
                 }
             }).catch((error) => console.error(error))
-            .done();
+            .done();*/
     }
 
     render() {
