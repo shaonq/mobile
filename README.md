@@ -32,9 +32,9 @@ git push -u origin master
 * ~~使用chocolatey安装python2, Nodejs ,Git~~ 
  >- ~~`choco install python2`~~
  >- ~~`choco install nodejs.install`~~
- >- ~~`#切换淘宝npm源`~~
- >- ~~`npm config set registry https://registry.npm.taobao.org --global` ~~
- >- ~~`npm config set disturl https://npm.taobao.org/dist --global` ~~
+ >- `#切换淘宝npm源`
+ >>- `npm config set registry https://registry.npm.taobao.org --global`
+ >>- `npm config set disturl https://npm.taobao.org/dist --global`
  >- ~~`choco install git`~~
  
 
