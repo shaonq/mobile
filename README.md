@@ -12,7 +12,7 @@ git push -u origin master
 
 #### 下载 Java SDK
 
->- [下载]()        
+>- 下载        
 >- 添加系统变量 `JAVA_HOME` Java sdk路径        
 >- 添加系统变量 `path`  `%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin`
 
@@ -21,28 +21,23 @@ git push -u origin master
 
 ### 安装环境
 
-* 安装chocolatey安装工具
- >  官方网站：[https://chocolatey.org/install](https://chocolatey.org/install)
- >> 安装，用管理员运行powershell 执行
-```
-set-executionpolicy remotesigned
-iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
-set-executionpolicy  Restricted
-```
- > 
- 
-* 使用chocolatey安装python2, ~~Node~~ , ~~Git~~ 
-  > `choco install python2`
-  
-  >  ~~`choco install nodejs.install`~~ 
+* ~~安装chocolatey安装工具~~
+>- ~~[官网文档](https://chocolatey.org/install)~~
+>- ~~安装，用管理员运行powershell 执行~~
+>- ~~`set-executionpolicy remotesigned`~~
+>- ~~`iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`~~
+>- ~~`set-executionpolicy  Restricted`~~
 
-  ```
-      #切换淘宝npm源
-      npm config set registry https://registry.npm.taobao.org --global
-      npm config set disturl https://npm.taobao.org/dist --global
-    ```
-  > ~~`choco install git`~~ 
-  
+ 
+* ~~使用chocolatey安装python2, Nodejs ,Git~~ 
+ >- ~~`choco install python2`~~
+ >- ~~`choco install nodejs.install`~~
+ >- ~~`#切换淘宝npm源`~~
+ >- ~~`npm config set registry https://registry.npm.taobao.org --global` ~~
+ >- ~~`npm config set disturl https://npm.taobao.org/dist --global` ~~
+ >- ~~`choco install git`~~
+ 
+
 *  安装 React Native
  > `npm install -g  react-native-cli`
 
