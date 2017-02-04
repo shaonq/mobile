@@ -78,6 +78,11 @@ react-native start
 
 # 如果你碰到了ERROR Watcher took too long to load的报错，请尝试将这个文件中的MAX_WAIT_TIME值改得更大一些 (文件在node_modules/react-native/目录下)。
 
+# 错误：unable to downlaod bundle 
+请访问 http://localhost:8081/index.android.bundle?platform=android
+无法访问请 react-native start
+
+
 ```
 ### 测试环境
 Google浏览器安装 [react-developer-tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon)
