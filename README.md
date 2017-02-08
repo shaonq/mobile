@@ -140,6 +140,7 @@ enableProguardInReleaseBuilds = true
 等
 
 4,使用`curl`工具保存`index.android.bundle`文件，或者网页另存为加新建目录
+
 `curl -k "http//localhost:8081/index.android.bundle" >android/app/src/main/assets/index.android.bundle`
 
 5,安装`gradle`
@@ -147,9 +148,13 @@ enableProguardInReleaseBuilds = true
 `https://services.gradle.org/distributions/gradle-2.4-all.zip`
 
 `cd android`
+
 `gradle clean` 失败后先清除
+
 `gradle assembleRelease` 编译
+
 `gradlew assembleRelease` 下载同意版本gradle后编译（慢）
+
 6，编译
 在`android`目录下执行`gradle assembleRelease`
 
