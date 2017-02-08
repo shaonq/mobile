@@ -11,8 +11,9 @@ import {
   Text,
   View
 } from 'react-native';
+import App from './app/App';
 
-export default class App extends Component {
+/*export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -48,6 +49,6 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+});*/
 
 AppRegistry.registerComponent('App', () => App);
