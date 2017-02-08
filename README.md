@@ -156,6 +156,9 @@ enableProguardInReleaseBuilds = true
 
 `gradlew assembleRelease` 下载同意版本gradle后编译（慢）
 
+@[:app:packageRelease FAILED](http://www.tuicool.com/articles/zuMZfyM)
+
+
 6，编译
 在`android`同一下执行`gradle assembleRelease`
 
