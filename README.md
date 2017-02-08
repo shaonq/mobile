@@ -1,9 +1,4 @@
 ## 环境搭建 [API](https://github.com/shaonq/mobile/blob/master/md/)
-```
-# git 
-git remote add origin https://github.com/shaonq/mobile.git
-git push -u origin master
-```
 
 ### 开始前的准备工作
 #### API：
@@ -66,7 +61,7 @@ git push -u origin master
 # react-native init AwesomeProject
 # cd AwesomeProject
 
-git clone https://github.com/X-FAN/reactnativelearn.git
+git clone  https://github.com/facebook/react-native.git
 cd reactnativelearn
 npm install
 react-native run-android

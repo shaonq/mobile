@@ -1,28 +1,53 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
 
 import React, { Component } from 'react';
-// 引用react-native的 AppRegistry|内置模块 Navigator|导航  ToastAndroid|气泡
-import { AppRegistry, Navigator, ToastAndroid } from 'react-native';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 
-
-import GankShowComponent from './js/GankShowComponent'
-class AwesomeProject extends Component {
-    render() {
-        let defaultName = 'GankShowComponent';
-        let defaultComponent = GankShowComponent;
-        return (
-            <Navigator
-                initialRoute={{name: defaultName, component: defaultComponent}}
-                configureScene={(route) => {//定义跳转的方式,禁用手势拖动跳转
-                    return {...Navigator.SceneConfigs.FadeAndroid, gestures: false};
-                }}
-                renderScene={(route, navigator) => {
-                    let Component = route.component;
-                    //路由的参数和navigator都传入到跳转的component内
-                    return <Component {...route} navigator={navigator}/>
-                }}/>
-            //{...route} 将route的每个属性都传过去
-        );
-    }
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.android.js
+        </Text>
+        <Text style={styles.instructions}>
+          Double tap R on your keyboard to reload,{'\n'}
+          Shake or press menu button for dev menu
+        </Text>
+      </View>
+    );
+  }
 }
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+AppRegistry.registerComponent('App', () => App);

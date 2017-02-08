@@ -5,9 +5,14 @@
  */
 
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 
-class AwesomeProject extends Component {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -45,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('App', () => App);
