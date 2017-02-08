@@ -80,7 +80,10 @@ def enableSeparateBuildPerCPUArchitecture = false
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
-def enableProguardInReleaseBuilds = false
+
+def enableProguardInReleaseBuilds = true
+
+// def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 23
@@ -104,10 +107,19 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        release {
+                    storeFile file("app.keystore")
+                    storePassword "123456"
+                    keyAlias "app"
+                    keyPassword "123456"
+                }
+    }
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release // add signingConfigs config
         }
     }
     // applicationVariants are e.g. debug, release

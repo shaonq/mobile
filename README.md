@@ -55,55 +55,101 @@
  >+ Android 6.0(API23): `SDK Platform`,`Intel x86 Atom System Image`
  >+ Extras: `Android Support repository`, ~~`Android Support library`~~ 
 
+
+Windows用户请注意，请不要在命令行默认的System32目录中`init`项目！会有各种权限限制导致不能运行！
+
+官方`demo git clone  https://github.com/facebook/react-native.git`
+打开一个空的webStorm项目，在Terminal（或者在项目路径cmd） 执行
 ```
-# Windows用户请注意，请不要在命令行默认的System32目录中init项目！会有各种权限限制导致不能运行！
-#打开一个空的webStorm项目，在Terminal 执行
-# react-native init AwesomeProject
-# cd AwesomeProject
-
-git clone  https://github.com/facebook/react-native.git
-cd reactnativelearn
-npm install
-react-native run-android
-
-# 有个常见的问题是在你运行react-native run-android命令后，Packager可能不会自动运行。此时你可以手动启动它：
-#cd AwesomeProject
-cd reactnativelearn
-react-native start
-
-# 如果你碰到了ERROR Watcher took too long to load的报错，请尝试将这个文件中的MAX_WAIT_TIME值改得更大一些 (文件在node_modules/react-native/目录下)。
-
-# 错误：unable to downlaod bundle 
-请访问 http://localhost:8081/index.android.bundle?platform=android
-无法访问请 react-native start
-
-
+react-native init App
+cd App
 ```
-### 测试环境
-Google浏览器安装 [react-developer-tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon)
+ 启动服务
+ 
+ `react-native start`
 
-安卓5.0以上机器链接
-```
-adb reverse tcp:8081 tcp:8081
-# react-native start
+新开Terminal 运行项目
 
-```
-[查看项目](http://localhost:8081/debugger-ui)
+`react-native run-android`
+
+如果你碰到了`ERROR Watcher took too long to load`的报错，请尝试将这个文件中的`MAX_WAIT_TIME`值改得更大一些 (文件在`node_modules/react-native/`目录下)。
+
+错误：`unable to downlaod bundle` 
+
+报错请访问 [http://localhost:8081/index.android.bundle?platform=android](http://localhost:8081/index.android.bundle?platform=android)
+
+无法访问请 `react-native start`,代码错误会直接显示提示
+
+
+
+>Debug
+ Google浏览器插件 [react-developer-tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon)
+ 安卓5.0以上机器链接
+
+`adb adb devices`查看可调式设备
+
+
 
 现在你已经成功运行了项目，我们可以开始尝试动手改一改了：
 
 
-> - 在index.android.js并随便改上几行
-> - 按两下R键，或是用Menu键（通常是F2，在Genymotion模拟器中是?+M）打开开发者菜单，然后选择 Reload JS 就可以看到你的最新修改。
-> - 在终端下运行adb logcat *:S ReactNative:V 
-> - ReactNativeJS:V可以看到你的应用的日志。
+> - 在`index.android.js`并随便改上几行
+> - `react-native run-android`
+> - `react-native start`
+> - 设备上 `Reload Js` ，只有进入项目才可以出现菜单，没进app就别折腾。
 > - ~~`adb 位于系统 ANDROID_HOME 变量`~~
 
 ### 打包APK文件
 
->- `cd android`
->- `gradlew assembleRelease`
->- `download` `=>` `android\app\build\outputs\apk`
+1, 签名
+>  `[key]` 密钥名称 `[alias]` 密钥别名
+ ```
+keytool -genkey -v -keystore [key].keystore  -alias [alias] -keyalg RSA -keysize 2048 -validity 10000
+```
+然后根据提示输入`password`,`CN=, OU=, O=, L=, ST=, C=`等就可以得到位于项目根目录的 `[key].keystore`了
 
+2, 配置签名
+`copy `一份`[key].keystore`到 `android/app/`目录
+打开`android/app/build.gradle`,添加`signingConfigs`,修改`buildTypes`
 
-  
+```
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            storeFile file("[key].keystore")
+            storePassword [password]
+            keyAlias [alias]
+            keyPassword [password]
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+```
+
+3, 代码混淆
+```
+enableProguardInReleaseBuilds = true
+```
+等
+
+4,使用`curl`工具保存`index.android.bundle`文件，或者网页另存为加新建目录
+`curl -k "http//localhost:8081/index.android.bundle" >android/app/src/main/assets/index.android.bundle`
+
+5,安装`gradle`
+查看`D:\Code\mobile\android\gradle\wrapper\gradle-wrapper.properties`下面的gradle地址，安装一致版本
+`https://services.gradle.org/distributions/gradle-2.4-all.zip`
+
+`cd android`
+`gradle clean` 失败后先清除
+`gradle assembleRelease` 编译
+`gradlew assembleRelease` 下载同意版本gradle后编译（慢）
+6，编译
+在`android`目录下执行`gradle assembleRelease`
+
