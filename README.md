@@ -40,6 +40,7 @@
 	>- [安装文档](https://dsx.bugly.qq.com/repository/1)
     >- 添加系统变量 `ANDROID_HOME` 安卓sdk路径
     >-  添加系统变量 `path`  `%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;`
+    ![](https://pic3.zhimg.com/6eb6f5d2fd7e3ecbafd0c55f6878ebd2_b.png)
 * 模拟器
 
     > - 下载 [genymotion](https://www.genymotion.com/download/) 
@@ -144,7 +145,7 @@ enableProguardInReleaseBuilds = true
 `curl -k "http//localhost:8081/index.android.bundle" >android/app/src/main/assets/index.android.bundle`
 
 5,安装`gradle`
-查看`D:\Code\mobile\android\gradle\wrapper\gradle-wrapper.properties`下面的gradle地址，安装一致版本
+查看`android\gradle\wrapper\gradle-wrapper.properties`下面的gradle地址，安装一致版本
 `https://services.gradle.org/distributions/gradle-2.4-all.zip`
 
 `cd android`
@@ -156,5 +157,5 @@ enableProguardInReleaseBuilds = true
 `gradlew assembleRelease` 下载同意版本gradle后编译（慢）
 
 6，编译
-在`android`目录下执行`gradle assembleRelease`
+在`android`同一下执行`gradle assembleRelease`
 
