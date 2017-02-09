@@ -40,7 +40,7 @@
 	>- [安装文档](https://dsx.bugly.qq.com/repository/1)
     >- 添加系统变量 `ANDROID_HOME` 安卓sdk路径
     >-  添加系统变量 `path`  `%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;`
-    ![](https://pic3.zhimg.com/6eb6f5d2fd7e3ecbafd0c55f6878ebd2_b.png)
+    [详细](https://github.com/shaonq/mobile/tree/master/md)
 * 模拟器
 
     > - 下载 [genymotion](https://www.genymotion.com/download/) 
@@ -158,11 +158,11 @@ android {
 
 `gradle assembleRelease` 编译
 
-`gradlew assembleRelease` 下载同意版本gradle后编译（慢）
+`gradlew assembleRelease` 对比下载同一版本gradle后编译（慢）
 
 
 5，编译
-在`android`同一下执行`gradle assembleRelease`
+在`android`下执行`gradle assembleRelease`
 
 
 6, 代码混淆
@@ -172,4 +172,4 @@ enableProguardInReleaseBuilds = true
 非正式发布不建议开启，不然你会发现你在作死
 
 7，编译
-在`android`同一下执行`gradle assembleRelease`
+在`android`下执行`gradle assembleRelease`
