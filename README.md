@@ -111,6 +111,16 @@ keytool -genkey -v -keystore [key].keystore  -alias [alias] -keyalg RSA -keysize
 
 2, 配置签名
 `copy `一份`[key].keystore`到 `android/app/`目录
+
+编辑`~/.gradle/gradle.properties`（`C:\Users\administrator\.gradle\gradle.properties` 没有这个文件你就创建一个），添加如下的代码
+```
+MYAPP_RELEASE_STORE_FILE=[key].keystore
+MYAPP_RELEASE_KEY_ALIAS=[alias]
+MYAPP_RELEASE_STORE_PASSWORD=*****
+MYAPP_RELEASE_KEY_PASSWORD=*****
+```
+>Ps：~表示用户目录，比如windows上可能是C:\Users\用户名，而mac上可能是/Users/用户名。
+
 打开`android/app/build.gradle`,添加`signingConfigs`,修改`buildTypes`
 
 ```
@@ -119,10 +129,10 @@ android {
     defaultConfig { ... }
     signingConfigs {
         release {
-            storeFile file("[key].keystore")
-            storePassword [password]
-            keyAlias [alias]
-            keyPassword [password]
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
         }
     }
     buildTypes {
@@ -134,17 +144,11 @@ android {
 }
 ```
 
-3, 代码混淆
-```
-enableProguardInReleaseBuilds = true
-```
-等
-
-4,使用`curl`工具保存`index.android.bundle`文件，或者网页另存为加新建目录
+3,使用`curl`工具保存`index.android.bundle`文件，或者网页另存为加新建目录
 
 `curl -k "http//localhost:8081/index.android.bundle" >android/app/src/main/assets/index.android.bundle`
 
-5,安装`gradle`
+4,安装`gradle`
 查看`android\gradle\wrapper\gradle-wrapper.properties`下面的gradle地址，安装一致版本
 `https://services.gradle.org/distributions/gradle-2.4-all.zip`
 
@@ -156,9 +160,16 @@ enableProguardInReleaseBuilds = true
 
 `gradlew assembleRelease` 下载同意版本gradle后编译（慢）
 
-@[:app:packageRelease FAILED](http://www.tuicool.com/articles/zuMZfyM)
 
-
-6，编译
+5，编译
 在`android`同一下执行`gradle assembleRelease`
 
+
+6, 代码混淆
+```
+enableProguardInReleaseBuilds = true
+```
+非正式发布不建议开启，不然你会发现你在作死
+
+7，编译
+在`android`同一下执行`gradle assembleRelease`
