@@ -40,7 +40,6 @@
 	>- [安装文档](https://dsx.bugly.qq.com/repository/1)
     >- 添加系统变量 `ANDROID_HOME` 安卓sdk路径
     >-  添加系统变量 `path`  `%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;`
-    [详细](https://github.com/shaonq/mobile/tree/master/md)
 * 模拟器
 
     > - 下载 [genymotion](https://www.genymotion.com/download/) 
@@ -55,6 +54,7 @@
  >+ Tools: `Android SDK Tools`,`Android SDK Platform-tools`,`Android SDK Build-tools`
  >+ Android 6.0(API23): `SDK Platform`,`Intel x86 Atom System Image`
  >+ Extras: `Android Support repository`, ~~`Android Support library`~~ 
+ >+ [详细勾选](https://github.com/shaonq/mobile/tree/master/md)
 
 
 Windows用户请注意，请不要在命令行默认的System32目录中`init`项目！会有各种权限限制导致不能运行！
@@ -169,7 +169,21 @@ android {
 ```
 enableProguardInReleaseBuilds = true
 ```
-非正式发布不建议开启，不然你会发现你在作死
+> 非正式发布可以先不开启，不然你会发现你在作死
 
 7，编译
 在`android`下执行`gradle assembleRelease`
+8，APK
+`android\app\build\outputs\apk\app-release.apk`
+
+### 设置安卓App图标
+
+替换掉默认的`ic_launcher.png`
+
+|     Dpi       |    Name         |Size(px)|
+| ------------- |:---------------:| ------:|
+|      hdpi     | ic_launcher.png | 72x72  | 
+|      mdpi     | ic_launcher.png | 48x48  | 
+|     xhdpi     | ic_launcher.png | 96x96  | 
+|    xxhdpi     | ic_launcher.png |144x144 | 
+> Path：android\app\src\main\res
