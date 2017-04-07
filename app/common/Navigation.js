@@ -4,6 +4,7 @@ import {Navigator, View} from 'react-native';
 import Home from  '../pages/Home';
 
 const Navigation = React.createClass({
+
     render () {
         let defaultName = 'Home';
         let defaultComponent = Home;
@@ -24,7 +25,6 @@ const Navigation = React.createClass({
                 renderScene={(route, navigator) => {
                     console.log(route);
                     let Component = route.component;
-                    //路由的参数和navigator都传入到跳转的component内
                     return <Component {...route.params} navigator={navigator}/>
                 }}/>
         );

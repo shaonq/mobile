@@ -187,3 +187,6 @@ enableProguardInReleaseBuilds = true
 |     xhdpi     | ic_launcher.png | 96x96  | 
 |    xxhdpi     | ic_launcher.png |144x144 | 
 > Path：android\app\src\main\res
+
+> font :
+http://www.jianshu.com/p/96d5c66791c3
