@@ -68431,7 +68431,7 @@ _react2.default.createElement(_reactNative.Text,null,'Home'))));
 
 }}]);return Home;}(_react.Component);exports.default=Home;
 }, 403, null, "App/app/pages/Home.js");
-__d(/* App/app/pages/Home2.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
+__d(/* App/app/pages/index.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12     );var _react2=babelHelpers.interopRequireDefault(_react); // 12 = react
 var _reactNative=require(42            );var // 42 = react-native
 
 Home2=function(_Component){babelHelpers.inherits(Home2,_Component);
@@ -68456,7 +68456,7 @@ _react2.default.createElement(_reactNative.Text,null,'Home2'))));
 
 
 }}]);return Home2;}(_react.Component);exports.default=Home2;
-}, 404, null, "App/app/pages/Home2.js");
+}, 404, null, "App/app/pages/index.js");
 ;require(194);
 ;require(0);
 //# sourceMappingURL=/index.android.map
