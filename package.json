@@ -1,5 +1,5 @@
 {
-  "name": "App",
+  "name": "maiKaWaiMai",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,8 @@
     "react": "~15.4.0",
     "react-native": "0.41.2",
     "react-native-nav": "^1.2.0",
-    "react-native-swiper": "^1.5.4"
+    "react-native-swiper": "^1.5.4",
+    "react-native-tab-navigator": "^0.3.3"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",

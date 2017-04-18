@@ -190,3 +190,9 @@ enableProguardInReleaseBuilds = true
 
 > font :
 http://www.jianshu.com/p/96d5c66791c3
+
+### windows kill 8081
+
+step1 : netstat -ano | findstr 80
+step2 : taillist 5704  (可不做，只是查看是win下面的那个exe占用了。)
+step3 : taskkill /pid  [加上step1查询出来的pid端口号]  /F

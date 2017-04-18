@@ -14,26 +14,6 @@ import NavBar, { NavButton, NavButtonText,NavGroup, NavTitle } from 'react-nativ
 import Colors from '../common/Colors';
 
 export default class About extends Component {
-    componentWillMount() {
-        if (Platform.OS === 'android') {
-            BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
-        }
-    }
-    componentWillUnmount() {
-        if (Platform.OS === 'android') {
-            BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
-        }
-    }
-    onBackAndroid = () => {
-        const { navigator } = this.props;
-        const nav = navigator;
-        const routers = nav.getCurrentRoutes();
-        if (routers.length > 1) {
-            nav.pop();
-            return true;
-        }
-        return false;
-    };
     render() {
         return(
             <View style={styles.background}>

@@ -1,3 +1,5 @@
+'use strict';
+
 import React  from 'react';
 import {StyleSheet } from 'react-native';
 
@@ -12,4 +14,5 @@ const Css = StyleSheet.create({
         alignItems: 'center',
     }
 });
-module.exports = Css;
+
+export default Css;

@@ -1,5 +1,5 @@
-'use strict';
-module.exports = {
+
+const Colors = {
     theme:'#E29C45',//主题色
     $666: '#666',
     $eee: '#eee',
@@ -12,5 +12,6 @@ module.exports = {
     green:'#5bd9b3',
     orange:'#F7B824',
     red:'#f75b43',
-    black:'#504d47',
+    black:'#504d47'
 };
+export default  Colors
