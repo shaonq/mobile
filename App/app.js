@@ -17,7 +17,7 @@ import {
 import Style from './common/Styles';
 import {NaviGoBack} from './utils/CommonUtils';   //后退
 import Splash from  './pages/Splash';   // 主页
-
+import AV from 'leancloud-storage';
 export const STATUS_BAR_HEIGHT = (Platform.OS === 'ios' ? 20 : 25);
 export const ABOVE_LOLIPOP = Platform.Version && Platform.Version > 19;
 
@@ -28,7 +28,13 @@ class App extends Component {
         this.goBack = this.goBack.bind(this);
         BackAndroid.addEventListener('hardwareBackPress', this.goBack);
     }
-
+    componentDidMount() {
+       // registerApp('wxb24c445773822c79');
+        AV.init({
+            appId: 'EaVxQno9WCP7SNf6kjhigDqg-gzGzoHsz',
+            appKey: 'mGputNtx6DTqlMMC8LBf09oC'
+        });
+    }
     goBack() {  //back
         return NaviGoBack(this._navigator);
     }

@@ -10,9 +10,11 @@ import {
     Image,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-import { toastShort } from '../utils/ToastUtil';
+import {toastShort} from '../utils/ToastUtil';
 import Style, {Color} from '../common/Styles';
 import Icon from '../common/Icon';
+import AV from 'leancloud-storage';
+
 
 import Order from './Order';
 import Cart from './Cart';
@@ -26,6 +28,18 @@ class AppMain extends Component {
             selectedTab: 'order'
         };
     }
+    componentDidMount() {
+/*        const TodoFolder  = AV.Object.extend('dingdan');
+        const todoFolder = new TodoFolder();
+        // 设置名称
+        todoFolder.set('url','url');
+        todoFolder.save().then(function (todo) {
+            console.log('objectId is ' + todo.id);
+        }, function (error) {
+            console.error(error);
+        });
+        console.log('qvq');*/
+    }
     render() {
         return (
             <TabNavigator>
@@ -34,7 +48,7 @@ class AppMain extends Component {
                     selected={this.state.selectedTab === 'order'}
                     selectedTitleStyle={styles.selectedTextStyle}
                     titleStyle={styles.textStyle}
-                    renderIcon={() =><Icon name='g1' style={styles.iconStyle}/>}
+                    renderIcon={() => <Icon name='g1' style={styles.iconStyle}/>}
                     renderSelectedIcon={() => <Icon name='b1' style={styles.iconStyle}/>}
                     onPress={() => this.setState({selectedTab: 'order'})}>
                     <Order {...this.props}/>
