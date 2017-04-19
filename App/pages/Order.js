@@ -101,7 +101,6 @@ class Order extends Component {
                     <View style={{backgroundColor:'white'}}>
                         <View style={styles.item_view_center}>
                             <Text style={{color:'black'}}>{order.shopName}</Text>
-
                             <View style={styles.item_view_center_status}>
                                 <Text style={styles.item_view_center_status_tv}>{order.orderStauts === 1 ? '订单完成' : '订单取消'}</Text>
                             </View>

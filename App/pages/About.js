@@ -10,18 +10,13 @@ import {
     BackAndroid,
 } from 'react-native';
 
-import NavBar, { NavButton, NavButtonText,NavGroup, NavTitle } from 'react-native-nav'
+
 import Colors from '../common/Colors';
 
 export default class About extends Component {
     render() {
         return(
             <View style={styles.background}>
-                <NavBar>
-                    <NavTitle >
-                        {"关于我"}
-                    </NavTitle>
-                </NavBar>
                 <View style={styles.phone}>
                     <Text style={styles.phoneText}>这是一个学习demo</Text>
                     <Text style={styles.phoneNumber}>就是这样</Text>

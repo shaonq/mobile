@@ -10,8 +10,9 @@ import {
     Image,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-
+import { toastShort } from '../utils/ToastUtil';
 import Style, {Color} from '../common/Styles';
+import Icon from '../common/Icon';
 
 import Order from './Order';
 import Cart from './Cart';
@@ -25,13 +26,6 @@ class AppMain extends Component {
             selectedTab: 'order'
         };
     }
-
-    componentWillMount() {//加载资源
-        this.images = {
-            HomeLogo: require('../imgs/home_logo.png')
-        }
-    }
-
     render() {
         return (
             <TabNavigator>
@@ -40,8 +34,8 @@ class AppMain extends Component {
                     selected={this.state.selectedTab === 'order'}
                     selectedTitleStyle={styles.selectedTextStyle}
                     titleStyle={styles.textStyle}
-                    renderIcon={() => <Image source={this.images.HomeLogo} style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image source={this.images.HomeLogo} style={styles.iconStyle}/>}
+                    renderIcon={() =><Icon name='g1' style={styles.iconStyle}/>}
+                    renderSelectedIcon={() => <Icon name='b1' style={styles.iconStyle}/>}
                     onPress={() => this.setState({selectedTab: 'order'})}>
                     <Order {...this.props}/>
                 </TabNavigator.Item>
@@ -50,8 +44,8 @@ class AppMain extends Component {
                     selected={this.state.selectedTab === 'cart'}
                     selectedTitleStyle={styles.selectedTextStyle}
                     titleStyle={styles.textStyle}
-                    renderIcon={() => <Image source={this.images.HomeLogo} style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image source={this.images.HomeLogo} style={styles.iconStyle}/>}
+                    renderIcon={() => <Icon name='g2' style={styles.iconStyle}/>}
+                    renderSelectedIcon={() => <Icon name='g2' style={styles.iconStyle}/>}
                     onPress={() => this.setState({selectedTab: 'cart'})}>
                     <Cart {...this.props}/>
                 </TabNavigator.Item>
@@ -60,8 +54,8 @@ class AppMain extends Component {
                     selected={this.state.selectedTab === 'user'}
                     selectedTitleStyle={styles.selectedTextStyle}
                     titleStyle={styles.textStyle}
-                    renderIcon={() => <Image source={this.images.HomeLogo} style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image source={this.images.HomeLogo} style={styles.iconStyle}/>}
+                    renderIcon={() => <Icon name='g3' style={styles.iconStyle}/>}
+                    renderSelectedIcon={() => <Icon name='b3' style={styles.iconStyle}/>}
                     onPress={() => this.setState({selectedTab: 'user'})}>
                     {<User {...this.props}/>}
                 </TabNavigator.Item>

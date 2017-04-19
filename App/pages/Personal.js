@@ -13,8 +13,8 @@ import {
 import NavBar, { NavButton, NavButtonText,NavGroup, NavTitle } from 'react-native-nav'
 
 /** comm */
-import Style from '../common/Styles';
-import Color from '../common/Colors';
+import Style,{Color} from '../common/Styles';
+
 
 /** mod */
 import TextTipsWidget from '../component/TextTipsWidget'

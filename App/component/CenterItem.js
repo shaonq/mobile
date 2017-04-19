@@ -11,14 +11,13 @@ import{
     StyleSheet,
 } from 'react-native';
 
-import { ArrowRight } from '../common/Base64png'
 
 const CenterItem = ({ onPress, title, icon}) => (
   <TouchableOpacity style={styles.wrap_style} onPress={onPress}>
      <View style={{flexDirection:'row'}}>
         <View style={styles.item_view}><Image style={styles.item_img} source={icon}/></View>
         <View style={styles.item_view}><Text style={{marginLeft:8}}>{title}</Text></View>
-        <View style={styles.item_arrow_view}><Image source={{uri:ArrowRight}} style={{width:12,height:18}}/></View>
+        <View style={styles.item_arrow_view}>{/*<Image source={{uri:ArrowRight}} style={{width:12,height:18}}/>*/}</View>
      </View>
   </TouchableOpacity>
 );

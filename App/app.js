@@ -16,7 +16,7 @@ import {
 
 import Style from './common/Styles';
 import {NaviGoBack} from './utils/CommonUtils';   //后退
-import Wellcome from  './pages/Wellcome';   // 主页
+import Splash from  './pages/Splash';   // 主页
 
 export const STATUS_BAR_HEIGHT = (Platform.OS === 'ios' ? 20 : 25);
 export const ABOVE_LOLIPOP = Platform.Version && Platform.Version > 19;
@@ -59,8 +59,8 @@ class App extends Component {
                     configureScene={this.configureScene}
                     renderScene={this.renderScene}
                     initialRoute={{
-                        component: Wellcome,
-                        name: 'Wellcome'
+                        component: Splash,
+                        name: 'Splash'
                     }}
                 />
             </View>

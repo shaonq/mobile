@@ -1,8 +1,7 @@
 'use strict';
 
-import React from 'react';
+import React,{Component} from 'react';
 import {
-  Dimensions,
   Image,
   InteractionManager,
   View,
@@ -11,9 +10,9 @@ import {
 
 import Home from './Home';
 
-const {height, width} = Dimensions.get('window');
+import {Height, Width} from '../common/Styles';
 
-class Wellcome extends React.Component {
+class Wellcome extends Component {
   constructor(props) {
     super(props);
       this.images ={};
@@ -38,7 +37,7 @@ class Wellcome extends React.Component {
     return (
       <View style={{flex:1}}>
       <Image
-        style={{width:width,height:height}}
+        style={{width:Width,height:Height}}
         source={this.images.HomeLogo}
       />
       </View>

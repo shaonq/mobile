@@ -9,7 +9,7 @@ import {
     Dimensions
 } from 'react-native'
 
-import Colors from '../common/Colors';
+import {Color} from '../common/Styles';
 const { width }  = Dimensions.get('window');
 
 export default class TextImageWidget extends Component{
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginLeft: 15,
         borderBottomWidth: 0.5 / PixelRatio.get(),
-        borderColor:Colors.$ddd
+        borderColor:Color.$ddd
 
     },
     textInputTitle: {
