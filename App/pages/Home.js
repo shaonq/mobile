@@ -12,11 +12,9 @@ import {
 } from 'react-native';
 
 /** comm */
-import Style from '../common/Styles';
-import Color from '../common/Colors';
+import Style , { Color } from '../common/Styles';
 
 /** util */
-import CommonUtils from '../utils/CommonUtils';
 const {width, height} = Dimensions.get('window');
 
 
