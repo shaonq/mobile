@@ -12,15 +12,12 @@ import {
 } from 'react-native';
 
 /** comm */
-import Style , { Color } from '../common/Styles';
-
-/** util */
-const {width, height} = Dimensions.get('window');
+import Style , { Color,width, height } from '../common/Styles';
 
 
 /** pages */
 
-import About from './About';
+import Launch from './Launch';
 
 import AppMain from './AppMain';
 import WebViewDetails from './WebViewDetails';
@@ -33,6 +30,7 @@ const text = {
     personalPage: '我要参团',
     main: '进入主页',
 };
+const homeLogo = require('../imgs/home_logo.png');
 
 export default class Home extends Component {
     constructor(props) {
@@ -49,13 +47,9 @@ export default class Home extends Component {
     routeSelle() { //传递路由
         const {navigator} = this.props;
         InteractionManager.runAfterInteractions(() => {
-            /*navigator.push({
-                component: WebViewDetails,
-                name: 'WebViewDetails',
-            });*/
             navigator.push({
-                component: About,
-                name: 'About',
+                component: Launch,
+                name: 'Launch',
             });
         });
     }
@@ -78,15 +72,10 @@ export default class Home extends Component {
             });
         });
     }
-
-    componentWillMount() {//加载资源
-        this.images.HomeLogo = require('../imgs/home_logo.png')
-    }
-
     render() {
         return (
             <View style={[Style.flex]}>
-                <Image style={[styles.image, {flex: 3, width: width}]} source={this.images.HomeLogo}/>
+                <Image style={[styles.image, {flex: 3, width: width}]} source={homeLogo}/>
                 <View style={[Style.flex, {flexDirection: 'row'}]}>
 
                     <View style={styles.btnView}>
