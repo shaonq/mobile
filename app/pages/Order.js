@@ -10,6 +10,10 @@ import{
     Dimensions,
     InteractionManager
 } from 'react-native';
+
+import {NavigationBar} from 'teaset';
+
+
 const ORDER_DATA={
     "api":"GetOrderHistory",
     "v":"1.0",
@@ -49,9 +53,7 @@ const ORDER_DATA={
         "price":78
     }]
 };
-/*import OrderSingle from './OrderSingle';*/
-
-const {height,width} = Dimensions.get('window');
+import Style,{Color,width,height} from '../common/Styles'
 
 class Order extends Component {
 
@@ -126,12 +128,9 @@ class Order extends Component {
     }
     render() {
         return (
-            <View style={{backgroundColor:'#f5f5f5',flex:1}}>
-                <View style={{height:48,backgroundColor:'black',flexDirection:'column'}}>
-                    <View><Text>后退</Text></View>
-                    <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-                        <Text style={{fontSize:18,color:'white',alignSelf:'center'}}>订单</Text>
-                    </View>
+            <View style={[Style.flex,Style.$f4f4f4]}>
+                <View style={{width,height:50}}>
+                    <NavigationBar title='订单'/>
                 </View>
                 <View style={{flex:1}}>
                     {this.renderContent(this.state.dataSource.cloneWithRows(

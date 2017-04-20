@@ -19,8 +19,9 @@ const {width, height} = Dimensions.get('window');
 
 
 /** pages */
-import Selle from './Selle';
-import Personal from './Personal';
+
+import About from './About';
+
 import AppMain from './AppMain';
 import WebViewDetails from './WebViewDetails';
 
@@ -48,13 +49,16 @@ export default class Home extends Component {
     routeSelle() { //传递路由
         const {navigator} = this.props;
         InteractionManager.runAfterInteractions(() => {
-            navigator.push({
+            /*navigator.push({
                 component: WebViewDetails,
                 name: 'WebViewDetails',
+            });*/
+            navigator.push({
+                component: About,
+                name: 'About',
             });
         });
     }
-
     routePersonal() { //传递路由
         const {navigator} = this.props;
         InteractionManager.runAfterInteractions(() => {

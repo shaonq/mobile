@@ -8,8 +8,6 @@ import {
     Platform,
     BackAndroid,
 } from 'react-native';
-
-import NavBar, {NavButton, NavButtonText, NavGroup, NavTitle} from 'react-native-nav'
 import { Color } from '../common/Styles';
 
 export default class About extends Component {
@@ -46,16 +44,6 @@ export default class About extends Component {
     render() {
         return (
             <View style={styles.background}>
-                <NavBar>
-                    <NavTitle >
-                        {this.state.name}
-                    </NavTitle>
-                    <NavGroup>
-                        <NavButton onPress={this.onBackAndroid}>
-                            <NavButtonText> {"后退"} </NavButtonText>
-                        </NavButton>
-                    </NavGroup>
-                </NavBar>
                 <View style={styles.phone}>
                     <Text style={styles.phoneText}>还没有发{this.state.name}</Text>
                     <Text style={styles.phoneNumber}>就是这样</Text>

@@ -8,7 +8,7 @@ import {width, height} from '../common/Styles'
 const image = {
     splash:require('../imgs/splash.jpg')
 };
-let time = 0;
+let time = 3e3;
 
 class Splash extends Component {
     constructor(props) {

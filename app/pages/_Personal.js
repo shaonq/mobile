@@ -10,7 +10,6 @@ import {
     BackAndroid,
 } from 'react-native';
 
-import NavBar, { NavButton, NavButtonText,NavGroup, NavTitle } from 'react-native-nav'
 
 /** comm */
 import Style,{Color} from '../common/Styles';

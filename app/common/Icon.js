@@ -2,7 +2,7 @@
 import React,{Component} from 'react';
 import { Image,View, Text, StyleSheet } from 'react-native';
 
-const images = {
+const Img = {
     g1:require('../imgs/icon/g1.png'),
     g2:require('../imgs/icon/g2.png'),
     g3:require('../imgs/icon/g3.png'),
@@ -17,7 +17,9 @@ const images = {
 export default class Icon extends Component {
     render() {
         return (
-            <Image source={this.props.name in images ? images[this.props.name] :images.g1 } style={this.props.style} />
+            <Image source={this.props.name in Img ? Img[this.props.name] :Img.g1 } style={this.props.style} />
         );
     }
 }
+
+export { Img }

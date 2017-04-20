@@ -8,6 +8,7 @@ let Color = {
     $666: '#666',
     $eee: '#eee',
     $e2e2e2: '#e1e4e8',
+    $f4f4f4: '#f5f5f5',
     $f8f8f8: '#f6f8fa',
     $ddd: '#d1d5da',
     $999: '#999',
