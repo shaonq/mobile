@@ -14,12 +14,15 @@ import {
     Platform
 } from 'react-native';
 
-import Style from './common/Styles';
+import Style,{Color} from './common/Styles';
 import {NaviGoBack} from './utils/CommonUtils';   //后退
 import Splash from  './pages/Splash';   // 主页
 import AV from 'leancloud-storage';
 export const STATUS_BAR_HEIGHT = (Platform.OS === 'ios' ? 20 : 25);
 export const ABOVE_LOLIPOP = Platform.Version && Platform.Version > 19;
+import {Theme} from 'teaset';
+
+
 
 class App extends Component {
     constructor(props) {
@@ -33,6 +36,9 @@ class App extends Component {
         AV.init({
             appId: 'EaVxQno9WCP7SNf6kjhigDqg-gzGzoHsz',
             appKey: 'mGputNtx6DTqlMMC8LBf09oC'
+        });
+        Theme.set({
+            navColor: Color.blue,
         });
     }
     goBack() {  //back
